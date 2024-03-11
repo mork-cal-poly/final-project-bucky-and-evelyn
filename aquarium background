@@ -1,0 +1,105 @@
+//set 1
+let bubbleX = [];
+let bubbleY = [];
+let bubbleNum = 15;
+let bubbleScale = [];
+let bubbleMove = 0;
+
+
+//set 2
+let bubbleX2 = [];
+let bubbleY2 = [];
+let bubbleNum2 = 15;
+let bubbleScale2 = [];
+let bubbleMove2 = 0;
+
+function setup() {
+  createCanvas(700, 500);
+  for (let i = 0; i < bubbleNum; i++) {
+    bubbleX[i] = random(width);
+    bubbleY[i] = random(height);
+    bubbleScale[i] = random (0.2,1);   
+  }
+
+  
+  for (let set2 = 0; set2 < bubbleNum2; set2++) {
+    bubbleX2[set2] = random(width);
+    bubbleY2[set2] = random(height);
+    bubbleScale2[set2] = random (0.2,1);
+  }
+}
+
+function draw() {
+  background(220);
+  
+  gradientBackground();
+  for (let i = 0; i < bubbleNum; i++) {
+    bubbles(bubbleX[i], bubbleY[i] + bubbleMove, bubbleScale[i]);
+    bubbleMove = bubbleMove - 0.2
+    if (bubbleY[i] + bubbleMove < -500){
+    bubbleMove = 1500
+    }
+  }
+  
+  for (let set2 = 0; set2 < bubbleNum2; set2++) {
+    bubbles(bubbleX2[set2], bubbleY2[set2] + bubbleMove2, bubbleScale2[set2]);
+    bubbleMove2 = bubbleMove2 - 0.2
+    if (bubbleY2[set2] + bubbleMove2 < -500){
+    bubbleMove2 = 2500
+    }
+  }
+  
+}
+
+
+function gradientBackground() {
+  let r = 122;
+  let g = 212;
+  let b = 230;
+  for (let y = 0; y <= height; y+=5) 
+  {
+    //y = y + 15
+    noStroke();
+    fill(r, g, b);
+    rect(0, y, width, 5);
+    r = r - (122-48) / (height / 5);
+    g = g - (212 - 109) / (height / 5);
+    b = b - (230 - 171) / (height / 5);
+  }
+}
+
+function bubbles(bubbleX, bubbleY, bubbleScale){
+  push();
+    scale(bubbleScale);
+    translate(bubbleX, bubbleY);
+  //main bubble
+    fill(224, 240, 255);
+    strokeWeight(2);
+    stroke (7, 31, 138);
+    ellipse(0, 0, 50);
+  //bubble shine
+    noStroke();
+    fill('white');
+    ellipse(10, -10, 20);
+  pop();
+
+  
+}
+
+function bubbles2(bubbleX2, bubbleY2, bubbleScale2){
+  push();
+    scale(bubbleScale2);
+    translate(bubbleX2, bubbleY2);
+  //main bubble
+    fill(224, 240, 255);
+    strokeWeight(2);
+    stroke (7, 31, 138);
+    ellipse(0, 0, 50);
+  //bubble shine
+    noStroke();
+    fill('white');
+    ellipse(10, -10, 20);
+  pop();
+
+  
+}
