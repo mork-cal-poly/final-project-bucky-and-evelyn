@@ -1,0 +1,85 @@
+Polar Bear
+
+let frontLegRotate = 0;
+let backLegRotate = 0;
+let rotateVariable = 0;
+let variable2 = 0;
+let moveOut = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+}
+
+function draw() {
+  background(220);
+  
+  translate(250, 250);
+  translate(moveOut,0)
+  
+  
+  drawPolarBear();
+  moveOut = moveOut - 2*variable2
+  rotateVariable = rotateVariable + variable2
+  if (rotateVariable == 10){
+    rotateVariable = 0
+  }
+  
+  if (rotateVariable >= 5){
+    frontLegRotate = 20
+  } else {
+    frontLegRotate = 0
+  }
+  if (rotateVariable >= 5){
+    backLegRotate = -20
+  } else {
+    backLegRotate = 0
+  }
+}
+
+function drawPolarBear(){
+    
+  //front leg
+  push();
+  translate(-80,30)
+  rotate(frontLegRotate)
+  rect(0,0,50 ,70)
+  pop();
+  
+  push();
+  //back leg
+  translate(20,30)
+  rotate(backLegRotate)
+  rect(0,0,50 ,70)
+  pop();
+  
+  //main
+  quad(-60, -40, 60, -50, 60, 50, -60, 50);
+  
+  //behind
+  quad(60,-50, 100, -10, 80, 50, 60, 50);
+  //neck
+  quad(-60, -40,  -60, 50, -120, 0, -100, -40);
+  
+  //head base
+  quad(-100, -60, -100, 10, -160, 0, -160, -60)
+  
+  //snout
+  quad (-185, -20, -180, 0, -160, 0, -160, -40)
+  
+  //eye
+  push();
+  fill(0,0,0);
+  ellipse (-145, -35, 10)
+  pop();
+  
+  //ear
+  ellipse (-120,-60, 20)
+
+}
+
+function mouseClicked(){
+  variable2 = 1
+
+  
+}
