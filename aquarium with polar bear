@@ -1,0 +1,204 @@
+//bubbles set 1
+let bubbleX = [];
+let bubbleY = [];
+let bubbleNum = 15;
+let bubbleScale = [];
+let bubbleMove = 0;
+
+
+//bubbles set 2
+let bubbleX2 = [];
+let bubbleY2 = [];
+let bubbleNum2 = 15;
+let bubbleScale2 = [];
+let bubbleMove2 = 0;
+
+//polar bear
+let frontLegRotate = 0;
+let backLegRotate = 0;
+let rotateVariable = 0;
+let variable2 = 0;
+let moveOut = 0;
+
+function setup() {
+  createCanvas(700, 500);
+  angleMode(DEGREES);
+  for (let i = 0; i < bubbleNum; i++) {
+    bubbleX[i] = random(width);
+    bubbleY[i] = random(height);
+    bubbleScale[i] = random (0.2,1);   
+  }
+
+  
+  for (let set2 = 0; set2 < bubbleNum2; set2++) {
+    bubbleX2[set2] = random(width);
+    bubbleY2[set2] = random(height);
+    bubbleScale2[set2] = random (0.2,1);
+  }
+}
+
+function draw() {
+  background(220);
+  
+  gradientBackground();
+  
+  //bubbles set 1
+  for (let i = 0; i < bubbleNum; i++) {
+    bubbles(bubbleX[i], bubbleY[i] + bubbleMove, bubbleScale[i]);
+    bubbleMove = bubbleMove - 0.2
+    if (bubbleY[i] + bubbleMove < -500){
+    bubbleMove = 1500
+    }
+  }
+  
+  //bubbles set 2
+  for (let set2 = 0; set2 < bubbleNum2; set2++) {
+    bubbles(bubbleX2[set2], bubbleY2[set2] + bubbleMove2, bubbleScale2[set2]);
+    bubbleMove2 = bubbleMove2 - 0.2
+    if (bubbleY2[set2] + bubbleMove2 < -500){
+    bubbleMove2 = 2500
+    }
+  }
+  
+  //surface background
+  push();
+  fill (78, 139, 200);
+  rect(0,0,700,120);
+  pop();
+  
+  //land
+  push();
+  fill (130, 104, 75);
+  rect(0,120,700,60);
+  pop();
+  
+  //Polar bear
+  push();
+  scale (0.8);
+  translate(600,100);
+  translate(moveOut,0)
+  
+  drawPolarBear();
+  moveOut = moveOut - 5*variable2
+  rotateVariable = rotateVariable + variable2
+  if (rotateVariable == 10){
+    rotateVariable = 0
+  }
+  
+  if (rotateVariable >= 5){
+    frontLegRotate = 20
+  } else {
+    frontLegRotate = 0
+  }
+  if (rotateVariable >= 5){
+    backLegRotate = -20
+  } else {
+    backLegRotate = 0
+  }
+  pop();
+}
+
+
+function gradientBackground() {
+  push();
+  let r = 182;
+  let g = 272;
+  let b = 290;
+  //(122,212, 230)
+  for (let y = 0; y <= height; y+=5) 
+  {
+    //y = y + 15
+    noStroke();
+    fill(r, g, b);
+    rect(0, y, width, 5);
+    r = r - (182-48) / (height / 5);
+    g = g - (272 - 109) / (height / 5);
+    b = b - (290 - 171) / (height / 5);
+  }
+  pop();
+}
+
+function bubbles(bubbleX, bubbleY, bubbleScale){
+  push();
+    scale(bubbleScale);
+    translate(bubbleX, bubbleY);
+  //main bubble
+    fill(224, 240, 255);
+    strokeWeight(2);
+    stroke (7, 31, 138);
+    ellipse(0, 0, 50);
+  //bubble shine
+    noStroke();
+    fill('white');
+    ellipse(10, -10, 20);
+  pop();
+
+  
+}
+
+function bubbles2(bubbleX2, bubbleY2, bubbleScale2){
+  push();
+    scale(bubbleScale2);
+    translate(bubbleX2, bubbleY2);
+  //main bubble
+    fill(224, 240, 255);
+    strokeWeight(2);
+    stroke (7, 31, 138);
+    ellipse(0, 0, 50);
+  //bubble shine
+    noStroke();
+    fill('white');
+    ellipse(10, -10, 20);
+  pop();
+
+  
+}
+
+//Polar Bear
+
+function drawPolarBear(){
+    
+  //front leg
+  push();
+  translate(-80,30)
+  rotate(frontLegRotate)
+  rect(0,0,50 ,70)
+  pop();
+  
+  push();
+  //back leg
+  translate(20,30)
+  rotate(backLegRotate)
+  rect(0,0,50 ,70)
+  pop();
+  
+  //main
+  quad(-60, -40, 60, -50, 60, 50, -60, 50);
+  
+  //behind
+  quad(60,-50, 100, -10, 80, 50, 60, 50);
+  //neck
+  quad(-60, -40,  -60, 50, -120, 0, -100, -40);
+  
+  //head base
+  quad(-100, -60, -100, 10, -160, 0, -160, -60)
+  
+  //snout
+  quad (-185, -20, -180, 0, -160, 0, -160, -40)
+  
+  //eye
+  push();
+  fill(0,0,0);
+  ellipse (-145, -35, 10)
+  pop();
+  
+  //ear
+  ellipse (-120,-60, 20)
+
+}
+
+function mouseClicked(){
+  variable2 = 1
+
+  
+}
