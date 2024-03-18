@@ -162,7 +162,31 @@ function draw() {
      backLegRotate = 0
    }
    pop();
-   
+
+    //Seaotter text&movement
+  ott = ott + OtterSpeed;
+  drawSeaotter(ott,240,0.11);
+  if (ott>= 250 && clickedSeaotter < 2){
+    ott = 250
+  }
+
+  //shark movement
+  Sha = Sha + SharkSpeed;
+  drawShark(Sha, 200);
+  if (Sha<=350 && clickedShark < 2){
+    Sha = 350
+  } 
+
+  //PufferFish movement
+  puff = puff + PufferSpeed;
+  drawPufferFish(puff, 250, 0.8);
+  if (puff>=50 && clickedPuffer < 2){
+    puff = 50
+  } 
+
+  drawPoles();
+
+  
 }
 
 
