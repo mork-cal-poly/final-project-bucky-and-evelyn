@@ -122,7 +122,22 @@ function draw() {
      if(bubbleY2[i] < 1300)
        bubbleY2[i] = random(1500,2500)
   }
-  
+  //Backfishes movement
+  fishes1 = fishes1 + 0.2;
+  fishes2 = fishes2 - 0.2;
+  fishes5 = fishes5 + 0.2;
+  fishesY = fishesY + 0.1;
+  fishesX = fishesX - 0.1;
+  fishesY1 = fishesY1 + 0.1;
+  fishesX1 = fishesX1 + 0.1;
+  drawFishes5(fishesX1, fishesY1);
+  drawFishes3(fishesX, fishesY);
+  drawFishes1(fishes1, 367);
+  drawFishes2(fishes2, 300);
+  drawFishes4(fishes5, 390);
+  drawPenguin(181,100);
+  drawPoles();
+
 }
 
 
