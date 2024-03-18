@@ -69,25 +69,25 @@ let PufferSpeed = 2;
 let t = 0;
 
 function preload(){
-  img = loadImage('waves_2.svg');
-  img2 = loadImage('nature_1.svg');
-  img3 = loadImage('nature2.svg');
-  img4 = loadImage('nature3.svg');
-  img5 = loadImage('nature4.svg');
-  img6 = loadImage('rocks.svg');
-  img7 = loadImage('rocks2.svg');
-  img8 = loadImage('rocks3.svg');
-  img9 = loadImage('rocks4.svg');
-  img10 = loadImage('cloud.svg');
-  img11 = loadImage('cloud2.svg');
-  img12 = loadImage('cloud3.svg');
-  img13 = loadImage('cloud4.svg');
-  img14 = loadImage('fishes.svg');
-  img15 = loadImage('fishes2.svg');
-  img16 = loadImage('fishes3.svg');
-  img17 = loadImage('fishes5.svg');
-  img18 = loadImage('fishes6.svg');
-  img19 = loadImage('penguin.svg');
+  img = loadImage('../images/waves_2.svg');
+  img2 = loadImage('../images/nature_1.svg');
+  img3 = loadImage('../images/nature2.svg');
+  img4 = loadImage('../images/nature3.svg');
+  img5 = loadImage('../images/nature4.svg');
+  img6 = loadImage('../images/rocks.svg');
+  img7 = loadImage('../images/rocks2.svg');
+  img8 = loadImage('../images/rocks3.svg');
+  img9 = loadImage('../images/rocks4.svg');
+  img10 = loadImage('../images/cloud.svg');
+  img11 = loadImage('../images/cloud2.svg');
+  img12 = loadImage('../images/cloud3.svg');
+  img13 = loadImage('../images/cloud4.svg');
+  img14 = loadImage('../images/fishes.svg');
+  img15 = loadImage('../images/fishes2.svg');
+  img16 = loadImage('../images/fishes3.svg');
+  img17 = loadImage('../images/fishes5.svg');
+  img18 = loadImage('../images/fishes6.svg');
+  img19 = loadImage('../images/penguin.svg');
  
 }
 
