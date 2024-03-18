@@ -99,10 +99,30 @@ function preload(){
 function draw() {
   background(220);
 
-  if (timer > 60 && timer < 100) {
-    text("Hi!", 200, 200);
+   //background
+   drawSky();
+   drawClouds();
+   drawRocks();
+   backgroundCol();
+   drawWaves();
+   drawBack();
+   drawNature();
+
+//bubbles
+  for(let i = 0; i < bubbleNum; i++) {
+     bubbles(bubbleX[i], bubbleY[i], bubbleScale[i]);
+     bubbleY[i] += bubbleMove;
+     if(bubbleY[i] < 1300)
+       bubbleY[i] = random(1500,2500)
   }
-  timer++;
+  
+  for(let i = 0; i < bubbleNum2; i++) {
+     bubbles(bubbleX2[i], bubbleY2[i], bubbleScale2[i]);
+     bubbleY2[i] += bubbleMove2;
+     if(bubbleY2[i] < 1300)
+       bubbleY2[i] = random(1500,2500)
+  }
+  
 }
 
 
