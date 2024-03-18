@@ -186,7 +186,44 @@ function draw() {
 
   drawPoles();
 
-  
+  //otter text
+  if (clickedSeaotter == 1) {
+    fill(255);
+    rect(251, 195 , 180, 25);
+    fill(0);
+    text("I like to hold hands when I sleep", 257, 210);
+  }
+    //shark text
+  if (clickedShark == 1) {
+    fill(255);
+    rect(sharkX + 100, sharkY, 280, 30);
+    fill(0);
+    text("Di you know my skeletons are made of cartilage?", 400, 435);
+  }
+
+  //Penguintext
+     if (clickedPenguin) {
+      fill(255);
+      rect(65, 69, 250, 30);
+      fill(0);
+      text("My knees are angle so I'm always squatting", 68, 87);
+      }
+
+  //bear text
+    if (clickedBear==1) {
+      fill(255);
+      rect(390, 110, 190, 30);
+      fill(0);
+      text("I can run as fast as 25 mph", 400, 130);
+      }
+
+      //pufferfishtext
+  if(clickedPuffer ==1){
+    fill(255);
+    rect(95, 342, 250, 30);
+    fill(0);
+    text("Did you know my spines are modified scales?", 99, 357);
+    }
 }
 
 
