@@ -507,4 +507,83 @@ function bubbles2(bubbleX2, bubbleY2, bubbleScale2){
     ellipse(10, -10, 20);
   pop();  
 }
+function drawPolarBear(x,y,s){
+  push();
+  translate(x,y)
+  scale(s);
+  fill('white');
+  angleMode(DEGREES);
+  //front leg
+  push();
+  translate(-80,30)
+  rotate(frontLegRotate)
+  rect(0,0,50 ,70)
+  pop();
+  
+  push();
+  //back leg
+  translate(20,30)
+  rotate(backLegRotate)
+  rect(0,0,50 ,70)
+  pop();
+  
+  //main
+  quad(-60, -40, 60, -50, 60, 50, -60, 50);
+  
+  //behind
+  quad(60,-50, 100, -10, 80, 50, 60, 50);
+  //neck
+  quad(-60, -40,  -60, 50, -120, 0, -100, -40);
+  
+  //head base
+  quad(-100, -60, -100, 10, -160, 0, -160, -60)
+  
+  //snout
+  quad (-185, -20, -180, 0, -160, 0, -160, -40)
+  
+  
+  //eye
+  push();
+  fill(0,0,0);
+  ellipse (-145, -35, 10)
+  pop();
+  
+  //ear
+  ellipse (-120,-60, 20)
+  
+  pop();
+}
+function drawPufferFish(x,y,s){
+  push();
+  noStroke();
+  translate(x,y);
+  scale(s);
+  fill('#C7D166')
+  ellipse(200,200,75);
+  fill('white');
+  ellipse(222,188,20)
+  fill('black');
+  ellipse(224,186,10);
+  fill('#795548')
+  triangle(206,152,207,164,201,161);
+  triangle(181,157,188,164,182,166);
+  triangle(166,171,176,173,170,179);
+  triangle(158,187,165,186,164,193);
+  triangle(156,205,163,200,165,205);
+  triangle(158,216,167,212,168,216);
+  triangle(166,230,171,220,175,226);
+  triangle(179,237,179,229,185,231);
+  triangle(194,241,190,233,196,235);
+  triangle(210,241,205,233,211,232);
+  triangle(226,234,219,229,224,225);
+  ellipse(188,180,5);
+  ellipse(171,195,5);
+  ellipse(196,196,5);
+  ellipse(181,210,5);
+  ellipse(223,206,5);
+  ellipse(194,224,5);
+  ellipse(205,211,5);
+  ellipse(213,225,5);
+  pop();
+}
 
