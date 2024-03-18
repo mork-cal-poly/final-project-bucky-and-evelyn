@@ -226,4 +226,255 @@ function draw() {
     }
 }
 
+function backgroundCol(){
+  //draw rectangles, 15 pixels tall
+  //light blue = r157,g229, b245
+  //dark blue = r64, g132, b171
+  let r = 157
+  let g = 229
+  let b = 245
+  
+for (let y=260; y<= height; y+=7){
+    noStroke();
+    fill(r,g,b);
+    rect(0,y,width,7);
+    r = r - (157-57)/(height/7);
+    g = g - (229-117)/(height/7);
+    b = b - (245-135)/(height/7);
+    
+  }
+}
+function drawPoles(){
+  push();
+  noStroke();
+  fill('black');
+  rect(0,0,10,500);
+  rect(350,0,10,500);
+  rect(690,0,10,500);
+  rect(0,260,700,5);
+  pop();
+}
+function drawWaves(){
+  push();
+  translate(0,230);
+  scale(2.4);
+  image(img,0,0);
+  pop();
+  
+}
+function drawNature(){
+  push();
+  translate(600,435);
+  scale(0.5);
+  image(img3,0,0);
+  pop();
+  push();
+  translate(370,400);
+  scale(0.7);
+  image(img4,0,0);
+  pop();
+  push();
+  translate(0,410);
+  scale(0.5);
+  image(img2,0,0);
+  pop();
+}
+function drawBack(){
+  push();
+ translate(0,430);
+ scale(2.4);
+ image(img5,0,0);
+ pop();
+}
+function drawRocks(){
+ push();
+ translate(460,55);
+ scale(1.3);
+ image(img6,0,0);
+ pop();
+ push();
+ translate(0,90);
+ scale(1);
+ image(img7,0,0);
+ pop();
+  push();
+ translate(200,130);
+ scale(0.7);
+ image(img8,0,0);
+ pop();
+ push();
+ translate(150,160);
+ scale(0.5);
+ image(img9,0,0);
+ pop();
+}
+function drawSky(){
+ //white to blue
+ //light = r223, g242, b243
+ //bluesky =r158, g242, b255
+ let r = 223
+ let g = 242
+ let b = 243
+ for (let y=0; y<= 180; y+=7){
+   noStroke();
+   fill(r,g,b);
+   rect(0,y,width,7);
+   r = r - (223-158)/(180/7);
+   g = g - 0/(180/7);
+   b = b + (255-243)/(180/7);
+   
+ }
+ push();
+ noStroke();
+ fill('#5F5D5F');
+ rect(0,150,700,60);
+ pop();
+ 
+ 
+}
+function drawClouds(){
+ push();
+ translate(30,10);
+ scale(0.4);
+ image(img10,0,0);
+ pop();
+ push();
+ translate(500,10);
+ scale(0.5);
+ image(img11,0,0);
+ pop();
+ push();
+ translate(140,10);
+ scale(0.5);
+ image(img12,0,0);
+ pop();
+  push();
+ translate(370,10);
+ scale(0.3);
+ image(img13,0,0);
+ pop();
+}
+function drawFishes1(x,y){
+  push();
+  translate(x,y);
+  scale(0.4);
+  image(img14,0,0);
+  pop();
+}
+function drawFishes2(x,y){
+  push();
+  translate(x,y);
+  scale(0.4);
+  image(img15,0,0);
+  pop();
+}
+function drawFishes3(x,y){
+  push();
+  translate(x,y);
+  scale(0.4);
+  image(img16,0,0);
+  pop();
+}
+function drawFishes4(x,y){
+   push();
+  translate(x,y);
+  scale(0.2);
+  image(img17,0,0);
+  pop();
+}
+function drawFishes5(x,y){
+  push();
+ translate(x,y);
+ scale(0.4);
+ image(img18,0,0);
+ pop();
+}
+function drawShark(x,y){
+ push();
+ noStroke();
+ translate(x,y);
+ fill('#218FD9')
+ quad(44,161,86,211,130,212,116,161);
+ quad(116,165,128,208,160,208,165,165);
+ triangle(163,165, 218,191,160,208);
+ triangle(192,179,252,156,218,191);
+ triangle(225,183,241,203,197,196);
+ triangle(116,165,168,127,165,165);
+ triangle(106,209,136,208,122,231);
+ fill('white');
+ quad(66,188,86,211,130,212,123,188);
+ quad(123,188,128,208,160,208,162,186);
+ triangle(162,186, 218,191,160,208);
+ ellipse(70,170,10,10);
+ fill('black');
+ ellipse(70,170,5);
+ line(110,177,127,201);
+ // arc(65,190,15,15,5*PI/4, 3*PI/4);
+ // arc(50,185,10,10,2*PI,5*PI/2);
+ pop();
+ 
+}
+function drawPenguin(x,y){
+ push();
+ translate(x,y);
+ scale(0.5);
+ image(img19,0,0);
+ pop();
+}
+function drawSeaotter (x,y,s) {
+ push();
+ translate(x,y);
+ scale(s);
+ angleMode(RADIANS);
+ 
+ fill(115,94,89)
+ //hind
+ ellipse(15,90,225,135); //leg 2
+ ellipse(125,100,75,150); //foot 2
+ ellipse(175,200,300,150); //tail
+ 
+ //body
+ fill(174,162,152)
+ ellipse(-90,160,425,250); //body 2
+ ellipse(-200,70,250,425); //body 1
+ 
+ //limbs
+ fill(115,94,89)
+ ellipse(-275,25,70,140); //bicept 1
+ push();
+   translate(-45,200)
+   rotate(PI/4);
+   ellipse(-245,35,50,100); //forearm 1
+ pop();
+ ellipse(-125,25,70,140); //bicept 2
+ push();
+   translate(-220,200)
+   rotate(3*PI/4);
+   ellipse(-150,55,50,100); //forearm 2
+ pop();
+ ellipse(-225,200,150); //upper leg 1
+ ellipse(-125,225,250,150); //leg 1
+ ellipse(-15,200,75,160); //foot 1
+
+ //head
+ ellipse(-290,-250,70); //left ear
+ ellipse(-110,-250,70); //right ear
+ fill(174,162,152)
+ ellipse(-200,-175,250); //head
+ fill(255)
+ ellipse(-250,-200,50); //left eye
+ ellipse(-150,-200,50); //right eye
+ fill(0)
+ ellipse(-245,-205,30); //left eye pupil
+ ellipse(-145,-205,30); //right eye pupil
+ line(-200,-140,-235,-105) //left whisker
+ line(-200,-140,-165,-105) //right whisker
+ fill(209,73,91)
+ arc(-200,-140,100,65,PI/4,3*PI/4) //mouth
+ fill(115,94,89)
+ ellipse(-200,-150,50,25); //nose
+ 
+ pop();
+}
+
 
