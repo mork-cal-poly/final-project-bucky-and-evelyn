@@ -76,7 +76,7 @@ function preload(){
   img = loadImage('../images/waves_2.svg');
   img2 = loadImage('../images/nature_1.svg');
   img3 = loadImage('../images/nature2.svg');
-  img4 = loadImage('..images/nature3.svg');
+  img4 = loadImage('../images/nature3.svg');
   img5 = loadImage('../images/nature4.svg');
   img6 = loadImage('../images/rocks.svg');
   img7 = loadImage('../images/rocks2.svg');
@@ -90,7 +90,7 @@ function preload(){
   img15 = loadImage('../images/fishes2.svg');
   img16 = loadImage('../images/fishes3.svg');
   img17 = loadImage('../images/fishes5.svg');
-  img18 = loadImage('..images/fishes6.svg');
+  img18 = loadImage('../images/fishes6.svg');
   img19 = loadImage('../images/penguin.svg');
  
 }
