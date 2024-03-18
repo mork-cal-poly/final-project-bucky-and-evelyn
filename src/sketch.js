@@ -71,7 +71,28 @@ function setup() {
     bubbleScale2[set2] = random (0.2,0.5);
   }
 
-
+}
+function preload(){
+  img = loadImage('../images/waves_2.svg');
+  img2 = loadImage('../images/nature_1.svg');
+  img3 = loadImage('../images/nature2.svg');
+  img4 = loadImage('..images/nature3.svg');
+  img5 = loadImage('../images/nature4.svg');
+  img6 = loadImage('../images/rocks.svg');
+  img7 = loadImage('../images/rocks2.svg');
+  img8 = loadImage('../images/rocks3.svg');
+  img9 = loadImage('../images/rocks4.svg');
+  img10 = loadImage('../images/cloud.svg');
+  img11 = loadImage('../images/cloud2.svg');
+  img12 = loadImage('../images/cloud3.svg');
+  img13 = loadImage('../images/cloud4.svg');
+  img14 = loadImage('../images/fishes.svg');
+  img15 = loadImage('../images/fishes2.svg');
+  img16 = loadImage('../images/fishes3.svg');
+  img17 = loadImage('../images/fishes5.svg');
+  img18 = loadImage('..images/fishes6.svg');
+  img19 = loadImage('../images/penguin.svg');
+ 
 }
 
 
