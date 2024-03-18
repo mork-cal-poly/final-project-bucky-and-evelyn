@@ -56,9 +56,24 @@ let PufferSpeed = 1.5;
 
 function setup() {
   // For ordering nodes in the DOM
-  let myCanvas = createCanvas(400, 400);
+  let myCanvas = createCanvas(700, 500);
   myCanvas.parent("canvas-parent");
+
+  for (let i = 0; i < bubbleNum; i++) {
+    bubbleX[i] = random(350,2100);
+    bubbleY[i] = random(1500, 2500);
+    bubbleScale[i] = random (0.2,0.5);   
+  }
+
+  for (let set2 = 0; set2 < bubbleNum2; set2++) {
+    bubbleX2[set2] = random(350,2100);
+    bubbleY2[set2] = random(1500,2500);
+    bubbleScale2[set2] = random (0.2,0.5);
+  }
+
+
 }
+
 
 function draw() {
   background(220);
