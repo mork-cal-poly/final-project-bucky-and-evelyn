@@ -587,3 +587,39 @@ function drawPufferFish(x,y,s){
   pop();
 }
 
+function mouseClicked(){
+  //BB for shark
+  if (mouseX> 415 && mouseX< 567 && mouseY< 407 && mouseY> 370) {
+    clickedShark += 1 ;
+    // console.log("hi");
+    }
+
+  //BB for penguin
+  if (mouseX> 186 && mouseX< 217 && mouseY< 173 && mouseY> 100) {
+    clickedPenguin = !clickedPenguin;
+    // console.log("hi");
+    }
+  //BB for Seaotter
+  if (mouseX> 215 && mouseX< 286  && mouseY< 255 && mouseY> 189) {
+    clickedSeaotter += 1 ;
+    // console.log("hi");
+    }
+  //polar bear
+   if (mouseX> 434 && mouseX< 539  && mouseY< 220 && mouseY> 172) {
+   if (clickedBear==0 ){
+     clickedBear += 1
+      
+   }
+     else if(clickedBear ==1){
+       variable2 += 1
+       clickedBear += 1
+     }
+     
+}
+  //pufferfish
+   if (mouseX> 181 && mouseX< 241  && mouseY< 444 && mouseY> 378) {
+    clickedPuffer += 1 ;
+
+    }
+  
+}
