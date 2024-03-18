@@ -138,6 +138,31 @@ function draw() {
   drawPenguin(181,100);
   drawPoles();
 
+   //Polar bear
+   push();
+   drawPolarBear(moveOut,180,0.5);
+   moveOut = moveOut - 2*variable2
+    if (moveOut == 490 && clickedBear < 2 ){
+     variable2 = 0
+   } 
+   
+   rotateVariable = rotateVariable + variable2
+   if (rotateVariable == 10){
+     rotateVariable = 0
+   }
+   
+   if (rotateVariable >= 5){
+     frontLegRotate = 20
+   } else {
+     frontLegRotate = 0
+   }
+   if (rotateVariable >= 5){
+     backLegRotate = -20
+   } else {
+     backLegRotate = 0
+   }
+   pop();
+   
 }
 
 
