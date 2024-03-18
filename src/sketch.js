@@ -1,4 +1,4 @@
-let timer = 0;
+
 //polarbear
 let frontLegRotate = 0;
 let backLegRotate = 0;
