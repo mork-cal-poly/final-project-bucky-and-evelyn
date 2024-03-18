@@ -476,5 +476,35 @@ function drawSeaotter (x,y,s) {
  
  pop();
 }
-
+function bubbles(bubbleX, bubbleY, bubbleScale){
+  push();
+    scale(bubbleScale);
+    translate(bubbleX, bubbleY);
+  //main bubble
+    noStroke();
+    fill('#8BCADEC6');
+    stroke (7, 31, 138);
+    ellipse(0, 0, 50);
+  //bubble shine
+    noStroke();
+    fill('#ABD9EFC9');
+    ellipse(10, -10, 20);
+  pop();
+}
+function bubbles2(bubbleX2, bubbleY2, bubbleScale2){
+  push();
+    scale(bubbleScale2);
+    translate(bubbleX2, bubbleY2);
+  //main bubble
+  noStroke();
+    fill('#8BCADEC6');
+    strokeWeight(2);
+    stroke (7, 31, 138);
+    ellipse(0, 0, 50);
+  //bubble shine
+    noStroke();
+    fill('#ABD9EFC9');
+    ellipse(10, -10, 20);
+  pop();  
+}
 
